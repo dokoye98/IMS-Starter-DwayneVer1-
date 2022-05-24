@@ -22,17 +22,8 @@ public class Customer {
 		Username = username;
 		Password = password;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((Firt_name == null) ? 0 : Firt_name.hashCode());
-		result = prime * result + ((Last_name == null) ? 0 : Last_name.hashCode());
-		result = prime * result + ((Password == null) ? 0 : Password.hashCode());
-		result = prime * result + ((Username == null) ? 0 : Username.hashCode());
-		result = prime * result + id;
-		return result;
-	}
+	
+	
 	
 	//toString 
 	
@@ -45,7 +36,17 @@ public class Customer {
 	
 	//hash code 
 		
-		
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Firt_name == null) ? 0 : Firt_name.hashCode());
+			result = prime * result + ((Last_name == null) ? 0 : Last_name.hashCode());
+			result = prime * result + ((Password == null) ? 0 : Password.hashCode());
+			result = prime * result + ((Username == null) ? 0 : Username.hashCode());
+			result = prime * result + id;
+			return result;
+		}
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -78,8 +79,8 @@ public class Customer {
 		if (id != other.id)
 			return false;
 		return true;
-	}
-	//methods will be added here 
+	}	
+	
 	
 	
 	
