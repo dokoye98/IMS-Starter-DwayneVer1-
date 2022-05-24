@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import com.qa.ims.persistance.models.Customer;
+
 public class IMS {
 	// this will be code written by me
 	DBConfig db = new DBConfig();
@@ -14,14 +16,16 @@ public class IMS {
 	// this is to add a customer to the IMS databases
 	public Customer addCustomer(Customer customer) {
 		try {
-			String query = "INSERT INTO Customer(First_name,Last_name,Username,password) values(?,?,?);";
+			String query = "INSERT INTO Customer(First_name,Last_name,Username,password) values(?,?,?,?);";
 			PreparedStatement preStmt = conn.prepareStatement(query);
+			System.out.println("connected");
 			preStmt.setString(1, customer.getFirt_name());
 			preStmt.setString(2, customer.getLast_name());
 			preStmt.setString(3, customer.getUsername());
 			preStmt.setString(4, customer.getPassword());
 			preStmt.executeUpdate();
 			return readLatest();
+			
 		} catch (Exception e) {
 
 		}
@@ -55,15 +59,11 @@ public class IMS {
 			e.printStackTrace();
 			return null;
 		}
-	
-	
-	
-	
-		
-		
-		
-		return null;
 		
 	}
 
-}
+	
+		
+	}
+
+

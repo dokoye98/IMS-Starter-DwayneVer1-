@@ -1,4 +1,4 @@
-package com.qa.ims;
+package com.qa.ims.persistance.models;
 
 public class Customer {
 	
