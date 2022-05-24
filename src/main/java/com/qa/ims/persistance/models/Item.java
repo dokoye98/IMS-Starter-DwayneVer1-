@@ -1,49 +1,33 @@
 package com.qa.ims.persistance.models;
 
-public class OrderItem {
-	
-	private int OrderItem_id;
+public class Item {
+	private int id;
 	private float cost;
 	private String name;
-	private int Customer_id;
-	//without OrderItem_ID
-	public OrderItem(float cost, String name, int customer_id) {
+	public Item(int id, float cost, String name) {
+		super();
+		this.id = id;
+		this.cost = cost;
+		this.name = name;
+	}
+	public Item(float cost, String name) {
 		super();
 		this.cost = cost;
 		this.name = name;
-		Customer_id = customer_id;
 	}
-	
-	
-	//with OrderItem_ID
-	public OrderItem(int orderItem_id, float cost, String name, int customer_id) {
-		super();
-		OrderItem_id = orderItem_id;
-		this.cost = cost;
-		this.name = name;
-		Customer_id = customer_id;
-	}
-
-
 	@Override
 	public String toString() {
-		return "OrderItem [OrderItem_id=" + OrderItem_id + ", cost=" + cost + ", name=" + name + ", Customer_id="
-				+ Customer_id + "]";
+		return "Item [id=" + id + ", cost=" + cost + ", name=" + name + "]";
 	}
-
-//hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Customer_id;
-		result = prime * result + OrderItem_id;
 		result = prime * result + Float.floatToIntBits(cost);
+		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -52,12 +36,10 @@ public class OrderItem {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		OrderItem other = (OrderItem) obj;
-		if (Customer_id != other.Customer_id)
-			return false;
-		if (OrderItem_id != other.OrderItem_id)
-			return false;
+		Item other = (Item) obj;
 		if (Float.floatToIntBits(cost) != Float.floatToIntBits(other.cost))
+			return false;
+		if (id != other.id)
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -66,51 +48,24 @@ public class OrderItem {
 			return false;
 		return true;
 	}
-
-
-	public int getOrderItem_id() {
-		return OrderItem_id;
+	public int getId() {
+		return id;
 	}
-
-
-	public void setOrderItem_id(int orderItem_id) {
-		OrderItem_id = orderItem_id;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-
 	public float getCost() {
 		return cost;
 	}
-
-
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
-
-
 	public String getName() {
 		return name;
 	}
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
-	public int getCustomer_id() {
-		return Customer_id;
-	}
-
-
-	public void setCustomer_id(int customer_id) {
-		Customer_id = customer_id;
-	}
-	
-	
-	
-	
-
 	
 	
 	
