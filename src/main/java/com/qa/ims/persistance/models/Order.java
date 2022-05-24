@@ -1,20 +1,20 @@
 package com.qa.ims.persistance.models;
 
-public class Orders {
+public class Order {
 
 private int Order_ID;
 private int Customer_ID;
 private String name;
 
 //constructor without Order_ID
-public Orders(int customer_ID, String name) {
+public Order(int customer_ID, String name) {
 	super();
 	Customer_ID = customer_ID;
 	this.name = name;
 }
 
 //Constructor with Order_ID
-public Orders(int order_ID, int customer_ID, String name) {
+public Order(int order_ID, int customer_ID, String name) {
 	super();
 	Order_ID = order_ID;
 	Customer_ID = customer_ID;
@@ -47,7 +47,7 @@ public boolean equals(Object obj) {
 		return false;
 	if (getClass() != obj.getClass())
 		return false;
-	Orders other = (Orders) obj;
+	Order other = (Order) obj;
 	if (Customer_ID != other.Customer_ID)
 		return false;
 	if (Order_ID != other.Order_ID)
