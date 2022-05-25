@@ -52,10 +52,10 @@ public class CustomerDAO {
 			try {
 				result.next();
 				int id = result.getInt("id");
-				String Firstname = result.getString("firstname");
-					String Lastname =result.getString("lastname");
-					String Username = result.getString("username");
-					String Password = result.getString("password");
+				String Firstname = result.getString("First_name");
+					String Lastname =result.getString("Last_name");
+					String Username = result.getString("Username");
+					String Password = result.getString("Password");
 			Customer customer =new Customer(Firstname, Lastname, Username, Password);
 			return customer;
 			}catch(Exception e) {

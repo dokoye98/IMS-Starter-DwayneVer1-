@@ -37,7 +37,7 @@ public OrderItem addOrder(OrderItem orderi) {
 
 public OrderItem readLatest() {
 	try {
-		String query = "SELECT * FROM Orderitem ORDER BY id DESC LIMIT 1;";
+		String query = "SELECT * FROM Orderitem ORDER BY orderitem_id DESC LIMIT 1;";
 		PreparedStatement preStmt = conn.prepareStatement(query);
 		ResultSet results = preStmt.executeQuery();
 		return modelOrderitem(results);
@@ -51,11 +51,11 @@ public OrderItem readLatest() {
 public OrderItem modelOrderitem(ResultSet result) {
 	try {
 		result.next();
-		int id = result.getInt("orderitem_ID");
+		//int id = result.getInt("orderitem_ID");
 		float cost = result.getFloat("Cost");
 			String Name =result.getString("name");
 			int Item = result.getInt("item_ID");
-	OrderItem orderi =new OrderItem(id,cost ,Name,Item);
+	OrderItem orderi =new OrderItem(cost ,Name,Item);
 	return orderi;
 	}catch(Exception e) {
 		e.printStackTrace();
