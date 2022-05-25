@@ -4,6 +4,7 @@ import com.qa.ims.persistance.dao.CustomerDAO;
 import com.qa.ims.persistance.dao.ItemDAO;
 import com.qa.ims.persistance.dao.OrderItemDAO;
 import com.qa.ims.persistance.models.Customer;
+import com.qa.ims.persistance.models.Item;
 import com.qa.ims.persistance.models.OrderItem;
 
 public class Runner {
@@ -17,9 +18,9 @@ ItemDAO itas = new ItemDAO();
 
 
 cdao.addCustomer(new Customer("mamasass","lam","lambo","3445"));
-odao.addOrder(new OrderItem(12.5f, "percy jackson", 123));
-		
-		
+//odao.addOrder(new OrderItem(12.5f, "percy jackson", 123));
+//cdao.deleteCustomer(4);
+//System.out.println(cdao.getCustomerbyId(7));
 		
 	}
 

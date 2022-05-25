@@ -1,12 +1,18 @@
 package com.qa.ims;
 
+
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.stream.Stream;
+
+
 
 public class DBConfig {
 	final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	final String DB_URL = "jdbc:mysql://localhost:3306/ims2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	final String DB_URL = "jdbc:mysql://localhost:3306/ims3?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	final String USER = "root";
 	final String PASSWORD = "root";
 	Connection conn;
@@ -24,5 +30,9 @@ public class DBConfig {
 		}
 		return conn;
 
+
 	}
+
+	
+	
 }

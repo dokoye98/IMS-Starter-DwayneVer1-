@@ -64,4 +64,37 @@ public OrderItem modelOrderitem(ResultSet result) {
 
 
 
-}}
+}
+
+
+public OrderItem getOrderitem(int id) {
+	try {
+		String query = "SELECT * FROM Orderitem where orderitem_id =?";
+		PreparedStatement prestmt =conn.prepareStatement(query);
+		prestmt.setInt(1, id);
+		ResultSet results =prestmt.executeQuery();
+		return modelOrderitem(results);
+	}catch(Exception e) {
+		e.printStackTrace();
+	return null;
+	}
+	
+}
+
+
+public boolean deleteorderitem(int id) {
+	try {
+		String query = "DELETE FROM orderitem WHERE orderitem_id =?;";
+		PreparedStatement prestmt =conn.prepareStatement(query);
+		prestmt.setInt(1, id);
+		prestmt.executeUpdate();
+		return true;
+	}catch(Exception e) {
+		return false;
+	
+
+
+
+}
+}
+}

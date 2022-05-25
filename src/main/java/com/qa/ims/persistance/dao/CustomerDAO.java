@@ -1,5 +1,6 @@
 package com.qa.ims.persistance.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,8 @@ import java.sql.Statement;
 
 import com.qa.ims.DBConfig;
 import com.qa.ims.persistance.models.Customer;
+
+
 
 public class CustomerDAO {
 	
@@ -65,9 +68,33 @@ public class CustomerDAO {
 			
 		}
 
-		
+		public Customer getCustomerbyId(int id) {
+			try {
+				String query = "SELECT * FROM Customer where id =?";
+				PreparedStatement prestmt =conn.prepareStatement(query);
+				prestmt.setInt(1, id);
+				ResultSet results =prestmt.executeQuery();
+				return modelCustomer(results);
+			}catch(Exception e) {
+				e.printStackTrace();
+			return null;
+			}
 			
 		}
 
+
+		public boolean deleteCustomer(int id) {
+			try {
+				String query = "DELETE FROM Customer WHERE id =?;";
+				PreparedStatement prestmt =conn.prepareStatement(query);
+				prestmt.setInt(1, id);
+				prestmt.executeUpdate();
+				return true;
+			}catch(Exception e) {
+				return false;
+			
+		}
+		}
+}
 
 
